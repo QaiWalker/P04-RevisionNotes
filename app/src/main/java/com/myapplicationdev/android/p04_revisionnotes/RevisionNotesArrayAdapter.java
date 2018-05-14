@@ -31,11 +31,16 @@ public class RevisionNotesArrayAdapter extends ArrayAdapter<Note> {
 		View rowView = inflater.inflate(resource, parent, false);
 
 		//Match the UI components with Java variables
+		iv1 = (ImageView)rowView.findViewById(R.id.imageView1star);
+		iv2 = (ImageView)rowView.findViewById(R.id.imageView2star);
+		iv3 = (ImageView)rowView.findViewById(R.id.imageView3star);
+		iv4 = (ImageView)rowView.findViewById(R.id.imageView4star);
+		iv5 = (ImageView)rowView.findViewById(R.id.imageView5star);
 
 		Note note = notes.get(position);
 
 		//Check if the property for starts >= 5, if so, "light" up the stars
-		if (/*stars >= 5*/) {
+		if (note.getStars() >= 5) {
 			iv5.setImageResource(android.R.drawable.btn_star_big_on);
 			iv4.setImageResource(android.R.drawable.btn_star_big_on);
 			iv3.setImageResource(android.R.drawable.btn_star_big_on);
